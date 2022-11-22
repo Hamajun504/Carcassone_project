@@ -17,15 +17,16 @@ class Game:
     def draw(self):
         self.screen.fill(config.WHITE)
         self.field.draw(self.screen)
+        pygame.display.update()
 
     def event_processing(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                finished = True
+                self.finished = True
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if config.FIELD_COORDS[0] <= event.pos[0] < config.FIELD_COORDS[0] + config.FIELD_WIDTH * config.GRID and \
                         config.FIELD_COORDS[1] <= event.pos[1] < config.FIELD_COORDS[1] + config.FIELD_HEIGHT * config.GRID:
-                    field.place((event.pos[0] - config.FIELD_COORDS[0], event.pos[1] - config.FIELD_COORDS[1]))
+                    self.field.place((event.pos[0] - config.FIELD_COORDS[0], event.pos[1] - config.FIELD_COORDS[1]), self.next_card)
                     self.next_card = card.Card()
 
     def run(self):
@@ -33,6 +34,7 @@ class Game:
             self.draw()
             self.clock.tick(config.FPS)
             self.event_processing()
+
 
             # TODO
 

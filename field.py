@@ -3,9 +3,11 @@ from pygame.draw import line
 import config
 import card
 from math import floor
+import config
 class Field:
     def __init__(self):
         self.screen = pygame.Surface((config.FIELD_HEIGHT * config.GRID, config.FIELD_WIDTH * config.GRID))
+        self.screen.fill(config.WHITE)
         self.cards = []
 
     def place(self, pos, card: card.Card):
