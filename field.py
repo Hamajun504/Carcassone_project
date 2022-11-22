@@ -13,12 +13,13 @@ class Field:
     def place(self, pos, card: card.Card):
         pos = (floor(pos[0] / config.GRID), floor(pos[1] / config.GRID))
         card.pos = pos
+        card.draw(self.screen)
         self.cards.append(card)
 
     def draw(self, screen):
         screen.blit(self.screen, config.FIELD_COORDS)
 
-    def update(self, card):
-        card.draw(self.screen)
+    #def update(self, card):
+        #card.draw(self.screen)
 
 

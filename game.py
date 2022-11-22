@@ -27,15 +27,14 @@ class Game:
                 if config.FIELD_COORDS[0] <= event.pos[0] < config.FIELD_COORDS[0] + config.FIELD_WIDTH * config.GRID and \
                         config.FIELD_COORDS[1] <= event.pos[1] < config.FIELD_COORDS[1] + config.FIELD_HEIGHT * config.GRID:
                     self.field.place((event.pos[0] - config.FIELD_COORDS[0], event.pos[1] - config.FIELD_COORDS[1]), self.next_card)
+                    #self.field.update
                     self.next_card = card.Card()
+
 
     def run(self):
         while not self.finished:
             self.draw()
             self.clock.tick(config.FPS)
             self.event_processing()
-
-
-            # TODO
 
 
