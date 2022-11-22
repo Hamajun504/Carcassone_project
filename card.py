@@ -16,4 +16,4 @@ class Card:
     def draw(self, screen):
         rect(screen, self.color, (30, 30, self.x, self.y))
 
-    def place(self):
+
