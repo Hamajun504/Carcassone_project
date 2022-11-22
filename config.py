@@ -8,4 +8,10 @@ FIELD_COORDS = (100, 100)
 
 FPS = 30
 
+BLACK = (0, 0, 0)
+GREEN = (0, 225, 0)
+BLUE = (0, 0, 225)
+
+COLORS = (BLACK, GREEN, BLUE)
+
 WHITE = (255, 255, 255)
