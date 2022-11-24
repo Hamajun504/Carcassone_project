@@ -4,14 +4,17 @@ import config
 import card
 from math import floor
 import config
+
+
 class Field:
     def __init__(self):
-        self.screen = pygame.Surface((config.FIELD_HEIGHT * config.GRID, config.FIELD_WIDTH * config.GRID))
+        self.screen = pygame.Surface((config.FIELD_WIDTH * config.GRID, config.FIELD_HEIGHT * config.GRID))
         self.screen.fill(config.WHITE)
         self.cards = []
 
     def place(self, pos, card: card.Card):
         pos = (floor(pos[0] / config.GRID), floor(pos[1] / config.GRID))
+        print(pos)
         card.pos = pos
         card.draw(self.screen)
         self.cards.append(card)
